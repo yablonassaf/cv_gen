@@ -7,7 +7,19 @@ document = Document()
 class DocWord:
     # default constructor
     def __init__(self):
-        pass
+        document.add_heading('Tony Stark', 0)
+        p = document.add_paragraph('Resume demo created by ')
+        p.add_run(' Itay Shpitzai').bold = True
+        p.add_run(' and ')
+        p.add_run('Katzi.').italic = True
+        document.add_heading('Work Experience', level=1)
+        # document.add_paragraph('Intense quote', style='Intense Quote')
+        #self.add_bullet_to_resume("aabbcc")
+        #document.add_paragraph(
+        #    'first item in ordered list', style='List Number'
+        #)
+        document.save('resume_demo.docx')
+
 
     def create_new_word_file(self):
         document.add_heading('Document Title', 0)
@@ -17,7 +29,7 @@ class DocWord:
         p.add_run('italic.').italic = True
         document.add_heading('Heading, level 1', level=1)
         #document.add_paragraph('Intense quote', style='Intense Quote')
-        self.add_bullet_to_CV("aabbcc")
+        self.add_bullet_to_resume("aabbcc")
         document.add_paragraph(
             'first item in ordered list', style='List Number'
         )
@@ -41,11 +53,12 @@ class DocWord:
         document.save('demo.docx')
         return document
 
-    def add_bullet_to_CV(self, text):
-        document.add_paragraph(
-            text, style='List Bullet'
-        )
-        document.save('demo.docx')
+    def add_bullet_to_resume(self, bullets):
+        for bullet in bullets:
+            document.add_paragraph(
+                bullet[0], style='List Bullet'
+            )
+        document.save('resume_demo.docx')
 
     # def word():
     #     mydoc = docx.Document()
@@ -64,8 +77,8 @@ class DocWord:
     #     mydoc.save("resume_template.docx")
 
 
-if __name__ == '__main__':
-    obj = DocWord()
-    #obj.create_new_word_file()
-    obj.add_bullet_to_CV("test2-assaf-4580")
-    print(obj)
+# if __name__ == '__main__':
+#     obj = DocWord()
+#     list1 = ["Aaa","bbb","11111"]
+#     obj.add_bullet_to_resume(list1)
+

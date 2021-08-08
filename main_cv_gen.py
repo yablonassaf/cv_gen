@@ -21,24 +21,13 @@ class PreferenceAnswers:
 
 
 if __name__ == '__main__':
-    # phrases = ["Here, we’ll be using a for loop to iterate through all the sentences in the phrases variable"]
-    # pharhparse_text(phrases)
-    # read_bullet()
-    #word()
 
     industry = (input('What industry are you making this resume for? ')).lower()
     if industry == "tech" or industry == "technology":
         print("technology chosen")
 
-    ops = PreferenceAnswers.operations
     doc = DocWord()
-    bullet = ReadCSV.get_bullet(PreferenceAnswers)
-    print("bullet bef = ", bullet)
-    paraphrased = Paraphrase.paraphrase_bullet(bullet)
-    print("bullet aft = ", paraphrased[0][0])
-    doc.add_bullet_to_CV(bullet)
-    print("bullet added to word doc")
-    #doc = DocWord()
-
-    #doc.add_bullet(text="aaaaaaaxxxxxxxxbbbb")
+    bullets = ReadCSV.get_bullets(PreferenceAnswers)
+    paraphrased = Paraphrase.paraphrase_bullets(bullets)
+    doc.add_bullet_to_resume(paraphrased)
     exit()
