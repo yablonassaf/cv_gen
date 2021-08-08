@@ -1,0 +1,36 @@
+{
+  "question": [
+    "Q1. How much work experience do you have?",
+    "Q2. What industry are you making this resume for?",
+    "Q3. Smallest State of India?",
+    "Q4. Where is Taj Mahal Located?"
+  ],
+  "answer": [
+    1,
+    2,
+    3,
+    2
+  ],
+  "options": [
+
+    ["ENTRY-LEVEL",
+      "MID-LEVEL",
+      "SENIOR",
+      "Executive"
+    ],
+    ["Technology",
+      "Consulting",
+      "Banking"
+    ],
+    ["Rajasthan",
+      "Punjab",
+      "Goa",
+      "Bihar"
+    ],
+    ["Lucknow",
+      "Agra",
+      "Bhopal",
+      "Delhi"
+    ]
+  ]
+}
