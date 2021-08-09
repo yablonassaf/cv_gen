@@ -6,8 +6,8 @@ document = Document()
 
 class DocWord:
     # default constructor
-    def __init__(self):
-        document.add_heading('Tony Stark', 0)
+    def __init__(self, details):
+        document.add_heading(details.name, 0)
         p = document.add_paragraph('Resume demo created by ')
         p.add_run(' Itay Shpitzai').bold = True
         p.add_run(' and ')
