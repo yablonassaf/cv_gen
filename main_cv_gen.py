@@ -21,6 +21,7 @@ class PreferenceAnswers:
     banking = input('Banking ')
     consulting = input('consulting ')
     supply_chain = input('supply chain ')
+    pharma = input('pharma ')
     print("=" * 10)
 
 
