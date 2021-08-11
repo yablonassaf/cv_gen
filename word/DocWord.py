@@ -9,9 +9,9 @@ class DocWord:
     def __init__(self, details):
         document.add_heading(details.name, 0)
         p = document.add_paragraph('Resume demo created by ')
-        p.add_run(' Itay Shpitzai').bold = True
+        p.add_run(' Dor').bold = True
         p.add_run(' and ')
-        p.add_run('Katzi.').italic = True
+        p.add_run('Assaf').italic = True
         document.add_heading('Work Experience', level=1)
         # document.add_paragraph('Intense quote', style='Intense Quote')
         #self.add_bullet_to_resume("aabbcc")
