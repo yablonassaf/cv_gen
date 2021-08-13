@@ -32,5 +32,5 @@ if __name__ == '__main__':
     doc = DocWord(Details)
     bullets = ReadCSV.get_bullets(PreferenceAnswers)
     paraphrased = Paraphrase.paraphrase_bullets(bullets)
-    doc.add_bullet_to_resume(paraphrased)
+    add_bullet_to_resume(paraphrased)
     exit()
