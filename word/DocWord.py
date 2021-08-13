@@ -1,28 +1,38 @@
 import docx
 from docx import Document
-from docx.shared import Inches
+from docx.shared import Inches, Pt
+from docx.enum.text import WD_LINE_SPACING
+
 document = Document()
 
 
 class DocWord:
     # default constructor
     def __init__(self, details):
-        document.add_heading(details.name, 0)
-        p = document.add_paragraph('Resume demo created by ')
-        p.add_run(' Dor').bold = True
-        p.add_run(' and ')
-        p.add_run('Assaf').italic = True
+        self.add_name(details.name)
+        self.add_phone_and_email(details.phone_num, details.email)
         document.add_heading('Work Experience', level=1)
-        # document.add_paragraph('Intense quote', style='Intense Quote')
-        #self.add_bullet_to_resume("aabbcc")
-        #document.add_paragraph(
-        #    'first item in ordered list', style='List Number'
-        #)
+        document.save('resume_demo.docx')
+
+    def add_name(self, name):
+        paragraph_name = document.add_paragraph(name)
+        document.save('resume_demo.docx')
+
+        style = document.styles['Normal']
+        font = style.font
+        font.name = 'Times new roman'
+        font.size = Pt(11)
+        paragraph_name.style = document.styles['Normal']
+        paragraph_name.style.font.bold = 1
+        paragraph_name.alignment = 1
+        paragraph_name.paragraph_format.space_before = Pt(0)
+        paragraph_name.paragraph_format.space_after = Pt(0)
         document.save('resume_demo.docx')
 
 
+
     def create_new_word_file(self):
-        document.add_heading('Document Title', 0)
+        #document.add_heading('Document Title', 0)
         p = document.add_paragraph('A plain paragraph having some ')
         p.add_run('bold').bold = True
         p.add_run(' and some ')
@@ -77,8 +87,36 @@ class DocWord:
     #     mydoc.save("resume_template.docx")
 
 
-# if __name__ == '__main__':
-#     obj = DocWord()
-#     list1 = ["Aaa","bbb","11111"]
-#     obj.add_bullet_to_resume(list1)
+    def add_phone_and_email(self, phone_num, email):
+        if phone_num.__len__() == 10:
+            phone_num = phone_num[: 0] + "(" + phone_num[0:]
+            phone_num = phone_num[: 4] + ")" + phone_num[4:]
+            phone_num = phone_num[: 8] + "-" + phone_num[8:]
+        phone_and_email = phone_num + " | " + email
+        paragraph = document.add_paragraph(phone_and_email)
+        paragraph.paragraph_format.line_spacing_rule = WD_LINE_SPACING.MULTIPLE
+        style = document.styles['Normal']
+        font = style.font
+        font.name = 'Times new roman'
+        font.size = Pt(10)
+        paragraph.style = document.styles['Normal']
+        paragraph.style.font.bold = 0
+        paragraph.alignment = 1
+        paragraph.paragraph_format.space_before = Pt(0)
+        paragraph.paragraph_format.space_after = Pt(1)
+        document.save('resume_demo.docx')
+
+
+
+
+
+class details_test:
+    name = "ANTHONY (TONY) STARK"
+    phone_num = "8572851027"
+    email = "assafy@mit.edu"
+
+if __name__ == '__main__':
+    obj = DocWord(details_test)
+    list1 = ["Aaa","bbb","11111"]
+    obj.add_bullet_to_resume(list1)
 

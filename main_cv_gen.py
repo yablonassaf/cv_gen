@@ -5,7 +5,10 @@ from word.DocWord import DocWord
 
 class Details:
     name = (input('What is your name? '))
+    phone_num = (input('What is your phone number? '))
+    email = (input('What is your phone email? '))
     print("=" * 10)
+
 
 
 class PreferenceAnswers:

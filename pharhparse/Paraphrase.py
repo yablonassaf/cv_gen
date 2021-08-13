@@ -34,5 +34,6 @@ def paraphrase_bullet(bullet):
 
 # if __name__ == '__main__':
 #     text = ["A list is like an array of items created using square brackets. They are different from arrays as they can contain items of different types. Lists are different from tuples as they are mutable.", "In Python 3.7 and above the Data Class can be used to return a class with automatically added unique methods", "This article is contributed by Shubham Agrawal. If you like GeeksforGeeks and would like to contribute, you can also write an article and mail your article to contribute@geeksforgeeks.org. See your article appearing on the GeeksforGeeks main page and help other Geeks."]
+#     print(text)
 #     ans = paraphrase_bullets(text)
-#     print(ans)
+#     print(ans[0])
